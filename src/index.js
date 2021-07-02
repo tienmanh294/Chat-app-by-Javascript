@@ -6,7 +6,7 @@ const {generateMessage, generateLocationMessage}=require('./utils/messages')
 const {addUser,removeUser,getUser,getUsersInRoom}=require('./utils/users')
 
 const server=http.createServer(app)
-const port=3000
+const port=process.env.PORT||3000
 const io=socketio(server)
 io.on('connection',(socket)=>{
     console.log('someone connected')
